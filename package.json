@@ -1,6 +1,6 @@
 {
   "name": "@cat_and_squirre/promise_serial",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A promise sequential executor",
   "main": "dist/index.js",
   "scripts": {
