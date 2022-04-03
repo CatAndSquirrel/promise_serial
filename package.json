@@ -1,0 +1,30 @@
+{
+  "name": "promise_serial",
+  "version": "1.0.0",
+  "description": "A promise sequential executor",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatAndSquirrel/promise_serial.git"
+  },
+  "keywords": [
+    "nodejs",
+    "promise"
+  ],
+  "author": "Hiro Ari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CatAndSquirrel/promise_serial/issues"
+  },
+  "homepage": "https://github.com/CatAndSquirrel/promise_serial#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
+  }
+}
