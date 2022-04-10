@@ -1,4 +1,4 @@
-import {map, wrap} from './index'
+import {map, flatMap, wrap} from './index'
 
 const waitFor =
   async (ms: number) =>
@@ -45,6 +45,27 @@ describe("Promise serial", () => {
     });
     expect(result).toEqual([
       {v: 5}, {v: 3}, {v: 1}
+    ]);
+  })
+  it("should flatMap array sequentially", async () => {
+    const array = [5, 3, 1];
+    const result = await flatMap(array, async (value, i) => {
+      await waitFor(value * 100);
+      return [...Array(i)].map(x => value)
+    });
+    expect(result).toEqual([
+      3, 1, 1
+    ]);
+  })
+  it("should flatMap array with wrapper sequentially", async () => {
+    const array = [5, 3, 1];
+    const wrapper = wrap(array);
+    const result = await wrapper.flatMap(async (value, i) => {
+      await waitFor(value * 100);
+      return [...Array(i)].map(x => value)
+    });
+    expect(result).toEqual([
+      3, 1, 1
     ]);
   })
 });
